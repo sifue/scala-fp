@@ -32,5 +32,4 @@ object Main {
     }
     isSortedRecursive(0)
   }
-  
 }
