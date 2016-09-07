@@ -1,5 +1,4 @@
 import scala.annotation.tailrec
-import scala.util.Random
 
 object Main {
 
