@@ -1,8 +1,11 @@
 import org.scalatest._
 import org.scalatest.concurrent.TimeLimits._
+import org.scalatest.mockito.MockitoSugar
 import org.scalatest.time.SpanSugar._
 
-class CalcSpec extends FlatSpec with DiagrammedAssertions {
+import org.mockito.Mockito._
+
+class CalcSpec extends FlatSpec with DiagrammedAssertions with MockitoSugar {
 
   val calc = new Calc
 
@@ -39,5 +42,11 @@ class CalcSpec extends FlatSpec with DiagrammedAssertions {
     failAfter(1000 millis) {
       assert(calc.isPrime(9999991))
     }
+  }
+
+  "Calcのモックオブジェクト" should "振る舞いを偽装することができる" in {
+    val mockCalc = mock[Calc]
+    when(mockCalc.sum(Seq(3, 4, 5))).thenReturn(12)
+    assert(mockCalc.sum(Seq(3, 4, 5)) === 12)
   }
 }
