@@ -1,4 +1,4 @@
-import scala.util.Try
+// scalastyle:off
 
 object AcademicResults extends  App {
 
@@ -25,3 +25,5 @@ object AcademicResults extends  App {
   println(find("saburo")) // StudentNotFound
 
 }
+
+// scalastyle:on
