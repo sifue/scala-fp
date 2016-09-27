@@ -6,4 +6,11 @@ object ParserStudy {
 
   type Parser[+T] = String => ParseResult[T]
 
+  def trueParser: Parser[Boolean] = input =>
+    if (input.startsWith("true")) {
+      Success(true, input.substring("true".length))
+    } else {
+      Failure
+    }
+
 }
