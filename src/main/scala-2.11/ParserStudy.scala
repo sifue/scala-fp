@@ -20,4 +20,10 @@ object ParserStudy {
       Failure
     }
 
+  def booleanParser: Parser[Boolean] = input =>
+    trueParser(input) match {
+      case success@Success(_, _) => success
+      case Failure => falseParser(input)
+    }
+
 }
