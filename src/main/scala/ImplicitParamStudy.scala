@@ -14,4 +14,3 @@ object ImplicitParamStudy {
   def deleteTitle(title: String)(implicit conn: Connection): Unit = conn.executeQuery(s"delete title='${title}'")
 
 }
-// scalastyle:on

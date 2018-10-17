@@ -1,5 +1,3 @@
-// scalastyle:off
-
 object AcademicResults extends  App {
 
   private[this] val results = Map(
@@ -25,5 +23,3 @@ object AcademicResults extends  App {
   println(find("saburo")) // StudentNotFound
 
 }
-
-// scalastyle:on
